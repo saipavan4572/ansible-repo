@@ -11,3 +11,20 @@
   - name: print info task1
     ansible.builtin.debug:
       msg: "Hi, Username: {{USERNAME}}, password is: {{PASSWORD}}"
+
+#[ centos@ip-172-31-25-86 ~/ansible-repo ]$ ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 07-vars-prompt.yaml
+#Please enter username: PSPK
+#Please enter password:
+
+#PLAY [variables] ************************************************************************************************************
+
+#TASK [Gathering Facts] ******************************************************************************************************
+#ok: [localhost]
+
+#TASK [print info task1] *****************************************************************************************************
+#ok: [localhost] => {
+#    "msg": "Hi, Username: PSPK, password is: aDMIN321"
+#}
+
+#PLAY RECAP ******************************************************************************************************************
+#localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
