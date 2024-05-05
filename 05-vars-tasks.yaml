@@ -14,3 +14,23 @@
   - name: print info task2
     ansible.builtin.debug:
       msg: "Hello we are learing {{course}} from {{institute}}"
+
+#[ centos@ip-172-31-25-86 ~/ansible-repo ]$ ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 05-vars-tasks.yaml
+
+#PLAY [variables] ************************************************************************************************************
+
+#TASK [Gathering Facts] ******************************************************************************************************
+#ok: [localhost]
+
+#TASK [print info task1] *****************************************************************************************************
+#ok: [localhost] => {
+#    "msg": "Hello we are learing Terraform from Edureka"
+#}
+
+#TASK [print info task2] *****************************************************************************************************
+#ok: [localhost] => {
+#    "msg": "Hello we are learing DevOps from Joindevops.com"
+#}
+
+#PLAY RECAP ******************************************************************************************************************
+#localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
