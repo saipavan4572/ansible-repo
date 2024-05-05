@@ -7,6 +7,7 @@
   - name: print info task1
     vars:           #Task level variable - overrides the play level variable.
       course: "Terraform"
+      institute: "Edureka"
     ansible.builtin.debug:
       msg: "Hello we are learing {{course}} from {{institute}}"
 
