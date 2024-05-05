@@ -1,0 +1,15 @@
+- name: variables
+  hosts: localhost
+  vars:           # variable declaration
+    course: "DevOps"      #Plya level variable
+    institute: "Joindevops.com"   #Plya level variable
+  tasks:
+  - name: print info task1
+    vars:           #Task level variable - overrides the play level variable.
+      course: "Terraform"
+    ansible.builtin.debug:
+      msg: "Hello we are learing {{course}} from {{institute}}"
+
+  - name: print info task2
+    ansible.builtin.debug:
+      msg: "Hello we are learing {{course}} from {{institute}}"
