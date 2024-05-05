@@ -3,4 +3,4 @@
   tasks:
   - name: print info task1
     ansible.builtin.debug:
-      msg: "Hi, Username: {{USERNAME}}, password is: {{PASSWORD}}"
+      msg: "Hello we are learing {{course}} from {{institute}}"
