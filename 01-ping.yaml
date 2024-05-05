@@ -3,4 +3,18 @@
   tasks: #list of tasks/modules/collections
   - name: pinging the server
     ansible.builtin.ping:
- 
+
+#
+# command and output/response-message
+#[ centos@ip-172-31-25-86 ~/ansible-repo ]$ ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 01-ping.yaml
+
+#PLAY [Ping the server] ******************************************************************************************************
+
+#TASK [Gathering Facts] ******************************************************************************************************
+#ok: [172.31.25.70]
+
+#TASK [pinging the server] ***************************************************************************************************
+#ok: [172.31.25.70]
+
+#PLAY RECAP ******************************************************************************************************************
+#172.31.25.70               : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
