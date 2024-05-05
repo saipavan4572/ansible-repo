@@ -1,0 +1,14 @@
+- name: variables
+  hosts: localhost
+  vars_prompt:
+  - name: USERNAME
+    prompt: Please enter username
+    private: false            # private: false --> username value will dispaly on the console
+  - name: PASSWORD
+    prompt: Please enter password
+    private: true             # private: true --> password value will not display on the console
+  - vars.yaml
+  tasks:
+  - name: print info task1
+    ansible.builtin.debug:
+      msg: "Hi, Username: {{USERNAME}}, password is: {{PASSWORD}}"
