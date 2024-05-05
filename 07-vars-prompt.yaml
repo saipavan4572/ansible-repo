@@ -7,7 +7,6 @@
   - name: PASSWORD
     prompt: Please enter password
     private: true             # private: true --> password value will not display on the console
-  - vars.yaml
   tasks:
   - name: print info task1
     ansible.builtin.debug:
