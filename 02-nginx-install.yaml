@@ -11,3 +11,21 @@
       name: nginx
       state: started
       enabled: yes
+
+# command to run the ansible playbook and output/response-message
+#[ centos@ip-172-31-25-86 ~/ansible-repo ]$ ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 02-nginx-install.yaml
+
+#PLAY [install and run nginx] ************************************************************************************************
+
+#TASK [Gathering Facts] ******************************************************************************************************
+#ok: [172.31.25.70]
+
+#TASK [insall nginx] *********************************************************************************************************
+#changed: [172.31.25.70]
+
+#TASK [start nginx] **********************************************************************************************************
+#changed: [172.31.25.70]
+
+#PLAY RECAP ******************************************************************************************************************
+#72.31.25.70               : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
