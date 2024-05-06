@@ -1,0 +1,8 @@
+- name: variables from arguments #Passing variables at Runtime
+  hosts: localhost
+  tasks: 
+  - name: get from args
+    ansible.builtin.debug:
+      msg: "Hello {{PERSON}}", good {{WISHES}}
+
+
