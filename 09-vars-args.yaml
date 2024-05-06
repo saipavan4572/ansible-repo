@@ -6,3 +6,25 @@
       msg: "Hello {{PERSON}}, good {{WISHES}}"
 
 
+# output response message
+#approach-I to pass the arguments
+#[ ec2-user@ip-172-31-26-66 ~/ansible-repo ]$ ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 09-vars-args.yaml -e "PERSON=Venkatesh WISHES=Night"
+#[WARNING]: Found both group and host with same name: localhost
+
+#PLAY [variables from arguments] *********************************************************************************************
+
+#TASK [Gathering Facts] ******************************************************************************************************
+#ok: [localhost]
+
+#TASK [get from args] ********************************************************************************************************
+#ok: [localhost] => {
+#   "msg": "Hello Venkatesh, good Night"
+#}
+
+#PLAY RECAP ******************************************************************************************************************
+#localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+####################
+
+# approach-II to pass the arguments
+#[ ec2-user@ip-172-31-26-66 ~/ansible-repo ]$ ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 09-vars-args.yaml -e PERSON=Venkatesh -e WISHES=Night

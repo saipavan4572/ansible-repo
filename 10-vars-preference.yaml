@@ -1,0 +1,16 @@
+- name: variable preference
+  hosts: localhost
+  vars:
+    COURSE: "DevOps from PLAY variable"
+  vars_files:
+  - vars2.yaml
+  vars_prompt:
+  - name: COURSE
+    prompt: "Please enter course:"
+    private: false
+  tasks:
+  - name: check preference
+    vars: 
+      COURSE: "Python from TASK variable"
+    ansible.buildin.debug:
+      msg: "Hello welcome to {{COURSE}}"
