@@ -12,5 +12,5 @@
   - name: check preference
     vars: 
       COURSE: "Python from TASK variable"
-    ansible.buildin.debug:
+    ansible.builtin.debug:
       msg: "Hello welcome to {{COURSE}}"
