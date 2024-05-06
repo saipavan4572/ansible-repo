@@ -14,3 +14,32 @@
       COURSE: "Python from TASK variable"
     ansible.builtin.debug:
       msg: "Hello welcome to {{COURSE}}"
+
+
+# output response message
+# [ ec2-user@ip-172-31-26-66 ~/ansible-repo ]$ ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 10-vars-preference.yaml -e COURSE=Java-Full-Stack-From-args
+# [WARNING]: Found both group and host with same name: localhost
+
+# PLAY [variable preference] **************************************************************************************************
+
+# TASK [Gathering Facts] ******************************************************************************************************
+# ok: [localhost]
+
+# TASK [check preference] *****************************************************************************************************
+# ok: [localhost] => {
+#     "msg": "Hello welcome to Java-Full-Stack-From-args"
+# }
+
+# PLAY RECAP ******************************************************************************************************************
+# localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+
+# order of preference for variables
+
+# 1. arguments          ---> command line arguments
+# 2. Task level
+# 3. variable files
+# 4. Prompt
+# 5. Play level
+# 6. inventory
+# 7. role level
