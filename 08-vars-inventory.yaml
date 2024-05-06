@@ -4,3 +4,21 @@
   - name: print info task1
     ansible.builtin.debug:
       msg: "Hello we are learing {{course}} from {{institute}}"
+
+
+# output response
+#[ ec2-user@ip-172-31-26-66 ~/ansible-repo ]$ ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 08-vars-inventory.yaml
+#[WARNING]: Found both group and host with same name: localhost
+
+#PLAY [variables from inventory] *********************************************************************************************
+
+#TASK [Gathering Facts] ******************************************************************************************************
+#ok: [localhost]
+
+#TASK [print info task1] *****************************************************************************************************
+#ok: [localhost] => {
+#    "msg": "Hello we are learing DevOps from Joindevops"
+#}
+
+#PLAY RECAP ******************************************************************************************************************
+#localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
