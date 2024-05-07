@@ -33,6 +33,39 @@
 #172.31.31.57               : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
 
 
+##############################################################
+
+
 # output response messgae after adding  ignore_errors: true
+# even if error occurs, it will continue execute the script further.
+
+#ex:
+# [ ec2-user@ip-172-31-31-57 ~/ansible-repo ]$ ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 12-conditions.yaml
+# [WARNING]: Found both group and host with same name: localhost
+
+# PLAY [conditions] ***********************************************************************************************************
+
+# TASK [Gathering Facts] ******************************************************************************************************
+# ok: [172.31.31.57]
+
+# TASK [check user exists or not] *********************************************************************************************
+# fatal: [172.31.31.57]: FAILED! => {"changed": true, "cmd": ["id", "expense"], "delta": "0:00:00.007305", "end": "2024-05-07 18:19:16.675389", "msg": "non-zero return code", "rc": 1, "start": "2024-05-07 18:19:16.668084", "stderr": "id: ‘expense’: no such user", "stderr_lines": ["id: ‘expense’: no such user"], "stdout": "", "stdout_lines": []}
+# ...ignoring
+
+# TASK [print user information] ***********************************************************************************************
+# ok: [172.31.31.57] => {
+#     "msg": "User info: {'changed': True, 'stdout': '', 'stderr': 'id: ‘expense’: no such user', 'rc': 1, 'cmd': ['id', 'expense'], 'start': '2024-05-07 18:19:16.668084', 'end': '2024-05-07 18:19:16.675389', 'delta': '0:00:00.007305', 'failed': True, 'msg': 'non-zero return code', 'stdout_lines': [], 'stderr_lines': ['id: ‘expense’: no such user']}"
+# }
+
+# TASK [create user] **********************************************************************************************************
+# changed: [172.31.31.57]
+
+# TASK [say Hello] ************************************************************************************************************
+# ok: [172.31.31.57] => {
+#     "msg": "Hello"
+# }
+
+# PLAY RECAP ******************************************************************************************************************
+# 172.31.31.57               : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1
 
 
