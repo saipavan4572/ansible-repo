@@ -5,7 +5,7 @@
   - name: check user exists or not
     ansible.builtin.command: id expense
     register: USER
-    #ignore_errors: true
+    ignore_errors: true
 
   - name: print user information
     ansible.builtin.debug:
@@ -20,3 +20,19 @@
       msg: "Hello"
 
 # if there is no module/package not available in ansible then we can use command module to run any command
+
+# output response messgae when there is no ignore_errors: true
+#[ ec2-user@ip-172-31-31-57 ~/ansible-repo ]$ ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 12-conditions.yaml
+#[WARNING]: Found both group and host with same name: localhost
+#PLAY [conditions] ***********************************************************************************************************
+#TASK [Gathering Facts] ******************************************************************************************************
+#ok: [172.31.31.57]
+#TASK [check user exists or not] *********************************************************************************************
+#fatal: [172.31.31.57]: FAILED! => {"changed": true, "cmd": ["id", "expense"], "delta": "0:00:00.007115", "end": "2024-05-07 18:14:50.460936", "msg": "non-zero return code", "rc": 1, "start": "2024-05-07 18:14:50.453821", "stderr": "id: ‘expense’: no such user", "stderr_lines": ["id: ‘expense’: no such user"], "stdout": "", "stdout_lines": []}
+#PLAY RECAP ******************************************************************************************************************
+#172.31.31.57               : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+
+# output response messgae after adding  ignore_errors: true
+
+
