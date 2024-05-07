@@ -1,0 +1,16 @@
+- name: check number
+  hosts: localhost
+  vars_prompt: # prompt arguments are always trated as string/text only
+  - name: number
+    prompt: Please enter number
+    private: no
+  tasks:
+  - name: number is less than 10
+    ansbile.builtin.debug:
+      msg: "Give number {{number}} is less than 10"
+    when: number | int < 10       # converting/manipulating string to integer
+
+  - name: number is greater than or equal to 10
+    ansbile.builtin.debug:
+      msg: "Give number {{number}} is greater than or equal to 10"
+    when: number | int >= 10      # converting/manipulating string to integer
