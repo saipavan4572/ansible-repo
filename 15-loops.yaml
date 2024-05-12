@@ -1,0 +1,11 @@
+- name: demo on loops
+  hosts: localhost
+  tasks:
+  - name: print names
+    ansible.builtin.debug:
+      msg: " Hello {{item}} "      # item is a reserved keyword to read the values one by one from the loop.
+    loop:
+    - linux
+    - shell
+    - ansible
+    - terraform

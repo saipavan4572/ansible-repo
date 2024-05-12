@@ -3,7 +3,7 @@
   tasks:
   - name: print default value
     ansible.builtin.debug:
-      msg: "Hello {{course | default('Ansible') }}"
+      msg: "Hello {{course | default('Ansible') }}" # if course is available in inventory.ini then it prints that value.
 
 - name: upper case
   hosts: localhost
