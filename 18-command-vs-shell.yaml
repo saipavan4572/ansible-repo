@@ -9,3 +9,4 @@
 
 # simple commands without the need of shell variables, environment and features like redirections, pipes, & then go for command module.
 # if we need to run complex commands or scripts then go for shell module
+# whatever works in command module will works in shell module but vice versa is not true.
