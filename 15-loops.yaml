@@ -9,3 +9,30 @@
     - shell
     - ansible
     - terraform
+
+# outpur response message
+
+# [ ec2-user@ip-172-31-25-211 ~/ansible-repo ]$ ansible-playbook 15-loops.yaml
+# [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+# PLAY [demo on loops] ********************************************************************************************************
+
+# TASK [Gathering Facts] ******************************************************************************************************
+# ok: [localhost]
+
+# TASK [print names] **********************************************************************************************************
+# ok: [localhost] => (item=linux) => {
+#     "msg": " Hello linux "
+# }
+# ok: [localhost] => (item=shell) => {
+#     "msg": " Hello shell "
+# }
+# ok: [localhost] => (item=ansible) => {
+#     "msg": " Hello ansible "
+# }
+# ok: [localhost] => (item=terraform) => {
+#     "msg": " Hello terraform "
+# }
+
+# PLAY RECAP ******************************************************************************************************************
+# localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
